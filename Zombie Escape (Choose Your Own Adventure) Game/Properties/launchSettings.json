@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Zombie Escape (Choose Your Own Adventure) Game": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
