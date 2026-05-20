@@ -45,6 +45,30 @@ void PrintTitleScreen()
     Console.WriteLine("Press Enter to start...");
     Console.ReadLine();
 }
+void PrintCharacter(string name) 
+{
+    string mainCharacter = @"
+                 ,#####,
+                 #_   _#
+                 |a` `a|
+                 |  u  |
+                 \  =  /
+                 |\___/|
+        ___ ____/:     :\____ ___
+      .'   `.-===-\   /-===-.`   '.
+     /      .-""""""""""-.-""""""""""-.      \
+    /'             =:=             '\
+  .'  ' .:    o   -=:=-   o    :. '  `.
+  (.'   /'. '-.....-'-.....-' .'\   '.)
+  /' ._/   "".     --:--     .""   \_. '\
+ |  .'|      "".  ---:---  .""      |'.  |
+ |  : |       |  ---:---  |       | :  |
+  \ : |       |_____._____|       | : /
+";
+    Console.WriteLine(mainCharacter);
+}
+
+
 PrintTitleScreen();
 Console.Clear();
 //Console.WriteLine("You wake up in a small, dimly lit room. You can hear the groans of zombies outside. What do you do?");
@@ -55,6 +79,27 @@ Console.WriteLine("You wake up and hear screaming outside your apartment window!
     "The once beautiful Point Guard City is being over-runed by zombies!! YOU MUST ESCAPE");
 Console.WriteLine("Press Enter to continue...");
 Console.ReadLine();
+Console.Clear();
 
 //Openning choice
-
+PrintCharacter("mainCharacter");
+Console.WriteLine("\"You:\"I've Got to get out of here... Staying here would be a death sentence for sure...\"\nWhere do I go?\"");
+Console.WriteLine("Hospital<<<< | >>>> Police Station\nType \"left\" to go the hospital or \"right\" to go to the police station");
+string choice1 = Console.ReadLine().ToLower();
+if (choice1 == "left")
+{
+    //Hospital storyline
+    Console.WriteLine("You decide to go to the hospital, hoping to find medical supplies and maybe even some survivors.");
+    // Continue with the hospital storyline...
+}
+else if (choice1 == "right")
+{
+    //Police station storyline
+    Console.WriteLine("You decide to go to the police station, hoping to find weapons and maybe even some survivors.");
+    // Continue with the police station storyline...
+}
+else
+{
+    Console.WriteLine("Invalid choice. Please type \"left\" or \"right\".");
+    // You can choose to loop back to the choice or end the game here.
+}
