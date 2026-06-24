@@ -1,8 +1,9 @@
 ﻿// See https://aka.ms/new-console-template for more information
+string bedroomScene = string.Empty;
 void PrintTitleScreen()
 {
     Console.WriteLine("" +
-        "*******************************************************************************\r\n" +
+        " * ******************************************************************************\r\n" +
         "                          .-\"L\"-.  \r\n" +
         "                            \r\n" +
         "          .--\"\"L\"\"---___    J  |  |\r\n" +
@@ -45,29 +46,6 @@ void PrintTitleScreen()
     Console.WriteLine("Press Enter to start...");
     Console.ReadLine();
 }
-void PrintCharacter(string name) 
-{
-    string mainCharacter = @"
-                 ,#####,
-                 #_   _#
-                 |a` `a|
-                 |  u  |
-                 \  =  /
-                 |\___/|
-        ___ ____/:     :\____ ___
-      .'   `.-===-\   /-===-.`   '.
-     /      .-""""""""""-.-""""""""""-.      \
-    /'             =:=             '\
-  .'  ' .:    o   -=:=-   o    :. '  `.
-  (.'   /'. '-.....-'-.....-' .'\   '.)
-  /' ._/   "".     --:--     .""   \_. '\
- |  .'|      "".  ---:---  .""      |'.  |
- |  : |       |  ---:---  |       | :  |
-  \ : |       |_____._____|       | : /
-";
-    Console.WriteLine(mainCharacter);
-}
-
 
 PrintTitleScreen();
 Console.Clear();
@@ -82,7 +60,6 @@ Console.ReadLine();
 Console.Clear();
 
 //Openning choice
-PrintCharacter("mainCharacter");
 Console.WriteLine("\"You:\"I've Got to get out of here... Staying here would be a death sentence for sure...\"\nWhere do I go?\"");
 Console.WriteLine("Hospital<<<< | >>>> Police Station\nType \"left\" to go the hospital or \"right\" to go to the police station");
 string choice1 = Console.ReadLine().ToLower();
@@ -90,6 +67,12 @@ if (choice1 == "left")
 {
     //Hospital storyline
     Console.WriteLine("You decide to go to the hospital, hoping to find medical supplies and maybe even some survivors.");
+    Console.WriteLine("Press Enter to Continue");
+    Console.ReadLine();
+    Console.WriteLine("You Get to the hospital... The front door is locked. Luckily, you enter through a broken window on the side of the building");
+    Console.ReadLine();
+    Console.WriteLine("You: \"This place looks even creepier at night\"");
+    Console.WriteLine("");
     // Continue with the hospital storyline...
 }
 else if (choice1 == "right")
@@ -100,6 +83,6 @@ else if (choice1 == "right")
 }
 else
 {
-    Console.WriteLine("Invalid choice. Please type \"left\" or \"right\".");
+    Console.WriteLine("Invalid choice. Please type \"left\" or \"right\"");
     // You can choose to loop back to the choice or end the game here.
 }

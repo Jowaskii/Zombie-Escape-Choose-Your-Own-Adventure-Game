@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Rock Paper Scissors Game": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

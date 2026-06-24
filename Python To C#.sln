@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36414.22 d17.14
+VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zombie Escape (Choose Your Own Adventure) Game", "Zombie Escape (Choose Your Own Adventure) Game\Zombie Escape (Choose Your Own Adventure) Game.csproj", "{0AAD8B13-2EB9-48FB-B640-EF794CCA2D15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangman Game", "Hangman Game\Hangman Game.csproj", "{1946DDE7-A3D2-4F36-9CB2-9E4AB0FAD43C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rock Paper Scissors Game", "Rock Paper Scissors Game\Rock Paper Scissors Game.csproj", "{D18142F7-F1DB-4C84-A60A-5142DE9D8FE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{0AAD8B13-2EB9-48FB-B640-EF794CCA2D15}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AAD8B13-2EB9-48FB-B640-EF794CCA2D15}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0AAD8B13-2EB9-48FB-B640-EF794CCA2D15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1946DDE7-A3D2-4F36-9CB2-9E4AB0FAD43C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1946DDE7-A3D2-4F36-9CB2-9E4AB0FAD43C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1946DDE7-A3D2-4F36-9CB2-9E4AB0FAD43C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1946DDE7-A3D2-4F36-9CB2-9E4AB0FAD43C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D18142F7-F1DB-4C84-A60A-5142DE9D8FE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D18142F7-F1DB-4C84-A60A-5142DE9D8FE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D18142F7-F1DB-4C84-A60A-5142DE9D8FE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D18142F7-F1DB-4C84-A60A-5142DE9D8FE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
