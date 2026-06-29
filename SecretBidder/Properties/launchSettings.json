@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SecretBidder": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}

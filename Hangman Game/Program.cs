@@ -1,6 +1,8 @@
 ﻿//Declare Variables
 
-List<string> wordList = new List<string>() { "apple", "banana", "strawberry", "grapefruit", "watermelon", "peach", "pear", "kiwi", "mango", "pineapple","blueberry","lemon","orange" };
+using System.Diagnostics.Metrics;
+
+List<string> wordList = new List<string>() { "apple", "banana", "strawberry", "grapefruit", "watermelon", "peach", "pear", "kiwi", "mango", "pineapple","blueberry","lemon","orange","pumpkin" };
 List<char> guessedLetters = new List<char>();
 List<char> correctLetters = new List<char>();
 string[] hangmanStages = new string[]
@@ -59,6 +61,7 @@ string displayWord = string.Empty;
 char userGuess =char.MinValue;
 
 int lives = int.MinValue;
+int score = 0;
 
 Random rand = new Random();
 bool isGameOver = false;
@@ -88,22 +91,37 @@ void Reset() {
 }
 void StartGame() {
     Reset();
-    Console.WriteLine(hangmanStages[lives]);
+    DisplayScoreAndVisual();
     foreach (char letter in chosenWord) {
         placeholdText += "_";
     }
     Console.WriteLine(placeholdText);
     while (!isGameOver) {
+
         displayWord = string.Empty;
         Console.WriteLine("Guess a letter: ");
         userGuess = Console.ReadKey().KeyChar;
         char skipper = char.MinValue;
-       
+
+        if (!guessedLetters.Contains(userGuess) && !chosenWord.Contains(userGuess)) {
+            lives--;
+        }
+        if (!guessedLetters.Contains(userGuess)) {
+            {
+                guessedLetters.Add(userGuess);
+            }
+        }
+        else if (guessedLetters.Contains(userGuess)) {
+            Console.Clear();
+            DisplayScoreAndVisual();
+            Console.WriteLine("You've already guessed that letter");
+            skipper = Console.ReadKey().KeyChar;
+        }
+
         foreach (char letter in chosenWord) {
             if (letter == userGuess) {
                 displayWord += userGuess;
                 correctLetters.Add(userGuess);
-                guessedLetters.Add(userGuess);
             }
             else if (correctLetters.Contains(letter)) {
                 displayWord += letter;
@@ -112,37 +130,32 @@ void StartGame() {
                 displayWord += "_";
             }
         }
-    
 
-        if (!chosenWord.Contains(userGuess)) {
-      
-            if (guessedLetters.Contains(userGuess)) {
-                Console.WriteLine("You've already guessed that letter");
-                skipper = Console.ReadKey().KeyChar;
-            }
-            else {
-                guessedLetters.Add(userGuess);
-                lives--;
-            }
-        }
-            
         Console.Clear();
-        Console.WriteLine(hangmanStages[lives]);
+        DisplayScoreAndVisual();
         Console.WriteLine(displayWord);
+
         if (!displayWord.Contains("_")) {
             Console.WriteLine("Congratulations! You guessed the word!");
             isGameOver = true;
+            score += 5;
         }
         else if (lives == 0) {
             Console.WriteLine("Game Over! The word was: " + chosenWord);
+            Console.WriteLine($"Final Score: {score}");
+            score = 0;
             isGameOver = true;
         }
     }
     Console.WriteLine("Do you want to play again? (y/n)");
-    string playAgain = Console.ReadLine().ToLower();
-    if (playAgain == "y") {
+    char playAgain = Console.ReadKey().KeyChar;
+    if (playAgain == 'y') {
         Console.Clear();
         StartGame();
     }
 }
+void DisplayScoreAndVisual() {
+    Console.WriteLine("Score: " + score);
+    Console.WriteLine(hangmanStages[lives]);
+}    
 StartGame();
